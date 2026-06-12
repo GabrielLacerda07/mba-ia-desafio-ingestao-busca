@@ -59,7 +59,7 @@ def _build_chain():
             connection=DATABASE_URL,
             use_jsonb=True,
         )
-        retriever = vector_store.as_retriever(search_kwargs={"k": 4})
+        retriever = vector_store.as_retriever(search_kwargs={"k": 10})
         prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
         llm = ChatOpenAI(model=OPENAI_CHAT_MODEL, temperature=0)
 
